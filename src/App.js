@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import CardPrincipal from "./Components/CardPrincipal/CardPrincipal";
+import { BrowserRouter, Route } from "react-router-dom";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Vendas from "./Components/Vendas/Vendas";
+import Estoque from "./Components/Estoque/Estoque";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      
+      
+        <Route exact path="/">
+          <Dashboard />
+        </Route>
+        <Route path="/vendas">
+          <Vendas />
+        </Route>
+        <Route path="/estoque">
+          <Estoque />
+        </Route>
+    
+      
+    </BrowserRouter>
   );
 }
 

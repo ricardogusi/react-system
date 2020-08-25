@@ -1,0 +1,71 @@
+.cardPrincipal {
+    display: flex;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;    
+    margin-top: 2rem;
+    width: 12rem;
+    height: 90vh;
+    background: #fb1;
+    border-radius: 8px 0px 0px 8px ;
+    margin-left: 1rem;    
+    align-items: center;
+  }
+
+img {
+    
+    width: 100px;
+    height: 100px;    
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.button {
+    display: flex;
+    cursor: pointer;
+    width: 9rem;    
+    margin-top: 1rem;    
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; 
+    border: none;
+    background-color: rgba(244,210,78, .8 );
+    
+    justify-content: left;    
+    align-items: center;
+}
+
+.button p {
+    font-size: .9rem;
+    font-weight: 500;
+    
+}
+
+
+
+svg {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 25px;
+    height: 25px;
+}
+
+.container {
+    position: absolute;
+    margin-top: 32px;
+    margin-left: 209px;
+    border-radius: 0px 8px 8px 0px;
+    width: 70rem;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.336);
+  }
+  

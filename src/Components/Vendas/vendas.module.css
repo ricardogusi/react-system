@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    margin-left: -1px;    
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border: none;
+    box-shadow: 5px 5px 10px -7px rgba(0,0,0,0.75);
+    border-radius: 0px 8px 8px 0px;    
+    background: rgb(253,187,48) ;
+}
+
+.header p {
+    font-size: 1.5rem;
+    font-family: 'IM Fell English', serif;
+    color: rgb(115,52,0) ;
+    margin-left: 3rem;
+}
+
+.header button {
+    margin-left: 50rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    background: rgb(246,205,65);
+    border: none;
+    box-shadow: 3px 3px 6px -3px rgba(0,0,0,0.55);
+    cursor: pointer;
+}
+
+.container {
+    display: grid;    
+    grid-template-columns: repeat(4, 1fr);    
+    margin: 15px;
+    height: 85%;
+    background:green;
+}
+
+.container p {
+    grid: 1fr;
+}
