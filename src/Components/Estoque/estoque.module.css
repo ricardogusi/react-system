@@ -1,0 +1,37 @@
+.produtoHead{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: white;
+    width: 60rem;
+    height: 50px;
+    list-style: none;
+    align-items: center;
+    font-family: 'IM Fell English', serif;
+    border-radius: 5px;
+    background: #133696;
+    font-size: 1.2rem;
+    margin-left: 2.5rem;
+    color: #E3AF2B;
+    margin-bottom: 40px;
+    
+  }
+
+
+
+.produto {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 2.5rem;
+    background: #2B5CE3;
+    height: 60px;
+    align-items: center;
+    list-style: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; 
+    color: #FFCC4A;
+}
+
+.pencil {
+    fill: #E3AF2B;
+    cursor: pointer;
+}
