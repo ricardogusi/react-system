@@ -1,8 +1,7 @@
 body {
   
   background-color: rgba(244,210,78, .5 ) ;
-  
-  /* #f4d24e */
+   
 
 }
 
@@ -19,7 +18,7 @@ a {
   height: 50px;
   border: none;
   box-shadow: 5px 5px 10px -7px rgba(0,0,0,0.75);
-  border-radius: 0px 8px 8px 0px;    
+  border-radius: 0px 8px 0px 0px;    
   background: #133696;
 }
 
@@ -31,7 +30,8 @@ a {
 }
 
 .header button {
-  margin-left: 50rem;
+  position: absolute;
+  right: 70px;
   width: 35px;
   height: 35px;
   font-size: 1.5rem;
@@ -93,6 +93,7 @@ a {
   border-radius: 5px;
   background: #E3AF2B;
   color: #133696;
+  cursor: pointer;
 }
 
 /* 
