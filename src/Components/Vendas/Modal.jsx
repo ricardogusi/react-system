@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styles from "./modal.module.css";
 import DataContext from "../../Data/DataContext";
 
-const Modal = ({ setModal }) => {
+const Modal = ({ setModal, children, title }) => {
   // const produtos = useContext(DataContext)
 
   function removeModal(event) {
@@ -15,16 +15,10 @@ const Modal = ({ setModal }) => {
     <div className={styles.container} onClick={removeModal}>
       <div className={`${styles.modal} ${styles.anime}`}>
         <div className={styles.header}>
-            <p>Cadastro de Venda</p>
-            <button onClick={removeModal}>x</button>
-            </div>
-
-        <form>
-          <label>Nome do Cliente:</label>
-          <input type="text" />
-          <label>Produtos:</label>
-          <input type="text" />
-        </form>
+          <p>{`${title}`}</p>
+          <button onClick={removeModal}>x</button>
+        </div>
+        {children}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import CardPrincipal from "../CardPrincipal/CardPrincipal";
 import DataContext from '../../Data/DataContext'
-import styles from './vendas.module.css'
+
 import Modal from './Modal'
 import { useState } from "react";
-import { useEffect } from "react";
+
 
 
 const Vendas = () => {
@@ -25,7 +25,9 @@ const Vendas = () => {
  
 
   return (<>
-    {modal && <Modal setModal={setModal} />}
+    {modal && <Modal setModal={setModal} title={'Cadastro de Vendas'}>
+      
+    </Modal> }
     <CardPrincipal>
       <div className="header">
         <p>Histórico de vendas</p>

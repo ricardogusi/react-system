@@ -18,7 +18,7 @@
   height: 85vh;
   width: 100vh;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.911);
+  background: rgb(255, 255, 255);
   border-radius: 8px;
   opacity: .3;
   transition: .3s;

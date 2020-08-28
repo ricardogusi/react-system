@@ -13,27 +13,36 @@ const CardPrincipal = ({children}) => {
     <div className={styles.menu}>
       <img src={Logo} alt="logo" />
       <div className={styles.buttonsContainer}>
+      <Link to="/">
         <div className={styles.button}>
           <Dash />
           <p>
             {" "}
-            <Link to="/">Dashboard</Link>
+            Dashboard
           </p>
         </div>
+        </Link>
+        <br/>
+        <Link to="/vendas">
         <div className={styles.button}>
           <Sales />
           <p>
             {" "}
-            <Link to="/vendas">Vendas</Link>
+            Vendas
           </p>
         </div>
+        </Link>
+        <br/>
+
+        <Link to="/estoque">
         <div className={styles.button}>
           <Stock />
           <p>
             {" "}
-            <Link to="/estoque">Estoque</Link>
+            Estoque
           </p>
         </div>
+        </Link>
       </div>
     </div>
     <div className={styles.container}>

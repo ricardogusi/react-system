@@ -1,39 +1,83 @@
-.produtoHead{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    background: white;
-    width: 60rem;
-    height: 50px;
-    list-style: none;
-    align-items: center;
-    font-family: 'IM Fell English', serif;
-    border-radius: 5px;
-    background: #133696;
-    font-size: 1.2rem;
-    margin-left: 2.5rem;
-    color: #E3AF2B;
-    margin-bottom: 40px;
-    
-  }
-
-
-
-
-
-.produto {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-left: 2.5rem;
-    background: #2B5CE3;
-    height: 60px;
-    align-items: center;
-    list-style: none;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif; 
-    color: #FFCC4A;
+.produtoHead {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: white;
+  width: 60rem;
+  height: 50px;
+  list-style: none;
+  align-items: center;
+  font-family: "IM Fell English", serif;
+  border-radius: 5px;
+  background: #133696;
+  font-size: 1.2rem;
+  margin-left: 2.5rem;
+  color: #e3af2b;
+  margin-bottom: 40px;
 }
 
-.pencil {
-    fill: #E3AF2B;
-    cursor: pointer;
+.produto {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-left: 2.5rem;
+  background: #2b5ce3;
+  height: 60px;
+  align-items: center;
+  list-style: none;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  color: #ffcc4a;
+}
+
+.pencil,
+.bin {
+  fill: #e3af2b;
+  cursor: pointer;
+}
+
+.pencil:hover,
+.bin:hover {
+  fill: #733400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;  
+  line-height: 3rem;
+  position: absolute;
+  top: 5rem;  
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.form input {
+  border: none;
+  border-bottom: 2px solid #2b5ce381;
+  height: 20px;
+  font-size: 1.2rem;
+}
+
+.form input:focus {
+    outline: none;
+    background: rgba(126, 126, 126, 0.1);
+    
+    border: 2px solid #2b5ce3;
+    border-radius: 6px;
+
+}
+
+.form input[type=number] {
+    width: 5rem;
+  
+}
+
+.form button {
+  
+  border: none;
+  border-radius: 5px;
+  background: #e3af2b;
+  height: 50px;
+  width: 150px;
+  margin: 50px auto;
+  font-size: 1.2rem;
+  color: #133696;
 }
