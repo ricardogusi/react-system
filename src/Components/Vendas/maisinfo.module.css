@@ -1,0 +1,9 @@
+.container {
+    width: 200px;
+    height: 100px;
+    background: white;
+    z-index: 600;
+    padding:2rem;
+    margin-top: 15px;
+    
+}

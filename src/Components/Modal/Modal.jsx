@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./modal.module.css";
-import DataContext from "../../Data/DataContext";
+
 
 const Modal = ({ setModal, children, title }) => {
   // const produtos = useContext(DataContext)

@@ -5,7 +5,7 @@ import { ReactComponent as Pencil } from "../../Assets/pencil.svg";
 import { ReactComponent as Trash } from "../../Assets/bin.svg";
 import { useContext } from "react";
 import DataContext from "../../Data/DataContext";
-import Modal from "../Vendas/Modal";
+import Modal from "../Modal/Modal";
 
 const Estoque = () => {
  
@@ -24,7 +24,7 @@ const Estoque = () => {
   return (
     <>
     {modal && <Modal setModal={setModal} title={'Cadastro de Produtos'}>
-      <div className={styles.form}>
+      <div className='form'>
       <label>Nome: </label>
       <input type="text" />
       <label>Código: </label>
@@ -34,7 +34,6 @@ const Estoque = () => {
       <label>Valor Unitário: </label>
       <input type="number" />
       <button>Cadastrar</button>
-
 
       </div>
       
