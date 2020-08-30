@@ -34,19 +34,17 @@ const Vendas = () => {
             </div>
             <button className={styles.botao}>Cadastrar Pedido</button>
             <div className={styles.pedido}>
-              
               <input disabled type="text" placeholder="Nome do Cliente" />
               <ul>
                 <li>Pote de mel </li>
-                <span>1 un</span>  
-                <span>R$ 35,00</span>               
+                <span>1 un</span>
+                <span>R$ 35,00</span>
                 <li>Própolis </li>
-                <span>1 un</span> 
-                <span>R$ 35,00</span>     
+                <span>1 un</span>
+                <span>R$ 35,00</span>
                 <li>Própolis </li>
-                <span>1 un</span>  
-                <span>R$ 35,00</span>             
-
+                <span>1 un</span>
+                <span>R$ 35,00</span>
               </ul>
               <p>Total: R$ 250,00</p>
             </div>
@@ -68,16 +66,20 @@ const Vendas = () => {
             </ul>
 
             {vendas.vendas.map((venda, i) => (
-              <ul key={venda.nome} className="barra">
-                <li>{venda.nome}</li>
-                <li>{venda.data}</li>
-                <li>R$ {venda.total.toFixed(2).replace(".", ",")}</li>
-                <li>
-                  <button>Mais informações</button>
-                </li>
-              </ul>
+              <>
+                <ul key={venda.nome} className="barra">
+                  <li>{venda.nome}</li>
+                  <li>{venda.data}</li>
+                  <li>R$ {venda.total.toFixed(2).replace(".", ",")}</li>
+                  <li>
+                    <button>Mais informações</button>
+                  </li>
+                </ul>
+               
+                  <MaisInfo />
+              
+              </>
             ))}
-            <MaisInfo />
           </div>
         </div>
       </CardPrincipal>

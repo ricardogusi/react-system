@@ -1,31 +1,35 @@
-body {
-  
-  background-color: rgba(244,210,78, .5 ) ;
-   
+/* 
 
+font-family: 'IM Fell English', serif;
+font-family: 'Roboto', sans-serif; 
+
+*/
+
+body {
+  background-color: rgba(244, 210, 78, 0.5);
 }
 
-a { 
+a {
   text-decoration: none;
   color: #333;
 }
 
 .header {
   display: flex;
-  margin-left: -1px;    
+  margin-left: -1px;
   align-items: center;
   width: 100%;
   height: 50px;
   border: none;
-  box-shadow: 5px 5px 10px -7px rgba(0,0,0,0.75);
-  border-radius: 0px 8px 0px 0px;    
+  box-shadow: 5px 5px 10px -7px rgba(0, 0, 0, 0.75);
+  border-radius: 0px 8px 0px 0px;
   background: #133696;
 }
 
 .header p {
   font-size: 1.5rem;
-  font-family: 'IM Fell English', serif;
-  color: #E3AF2B ;
+  font-family: "IM Fell English", serif;
+  color: #e3af2b;
   margin-left: 3rem;
 }
 
@@ -35,26 +39,20 @@ a {
   width: 35px;
   height: 35px;
   font-size: 1.5rem;
-  background: rgb(246,205,65);
+  background: rgb(246, 205, 65);
   border: none;
-  box-shadow: 3px 3px 6px -3px rgba(0,0,0,0.55);
+  box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, 0.55);
   cursor: pointer;
 }
 
-
-
 .container {
-  display: grid;    
-  grid-template-columns: repeat(4, 1fr);    
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   margin: 15px;
   height: 85%;
-  
 }
 
-
-
-
-.barraHead{
+.barraHead {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: white;
@@ -62,56 +60,51 @@ a {
   height: 50px;
   list-style: none;
   align-items: center;
-  font-family: 'IM Fell English', serif;
+  font-family: "IM Fell English", serif;
   border-radius: 5px;
   background: #133696;
   font-size: 1.2rem;
   margin-left: 2.5rem;
-  color: #E3AF2B;
+  color: #e3af2b;
   margin-bottom: 40px;
-  
 }
-
 
 .barra {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-left: 2.5rem;
-  background: #2B5CE3;
+  background: #2b5ce3;
   height: 40px;
   align-items: center;
   list-style: none;
   border-radius: 5px;
-  font-family: 'Roboto', sans-serif; 
-  color: #FFCC4A;
-  
-}    
+  font-family: "Roboto", sans-serif;
+  color: #ffcc4a;
+}
 
 .barra button {
   border: none;
   padding: 5px;
   border-radius: 5px;
-  background: #E3AF2B;
+  background: #e3af2b;
   color: #133696;
   cursor: pointer;
 }
 
-.barra button:hover { 
-  border: 2px solid #E3AF2B;
+.barra button:hover {
+  border: 2px solid #e3af2b;
 }
 
 .header button:hover {
   transform: scale(1.1);
-
 }
-
 
 .form {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   line-height: 3rem;
   position: absolute;
-  top: 5rem;  
+  top: 5rem;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
 }
@@ -124,21 +117,18 @@ a {
 }
 
 .form input:focus {
-    outline: none;
-    background: rgba(126, 126, 126, 0.1);
-    
-    border: 2px solid #2b5ce3;
-    border-radius: 6px;
+  outline: none;
+  background: rgba(126, 126, 126, 0.1);
 
+  border: 2px solid #2b5ce3;
+  border-radius: 6px;
 }
 
-.form input[type=number] {
-    width: 5rem;
-  
+.form input[type="number"] {
+  width: 5rem;
 }
 
 .form button {
-  
   border: none;
   border-radius: 5px;
   background: #e3af2b;
@@ -148,9 +138,3 @@ a {
   font-size: 1.2rem;
   color: #133696;
 }
-/* 
-
-font-family: 'IM Fell English', serif;
-font-family: 'Roboto', sans-serif; 
-
-*/
