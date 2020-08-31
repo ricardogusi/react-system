@@ -1,56 +1,29 @@
 import React, { useContext } from "react";
 import CardPrincipal from "../CardPrincipal/CardPrincipal";
 import DataContext from "../../Data/DataContext";
-import styles from "./vendas.module.css";
-import Modal from "../Modal/Modal";
 import { useState } from "react";
-import MaisInfo from "./MaisInfo";
+import MaisInfo from "./ModalMaisInfo";
+import ModalVendas from "./ModalVendas";
 
 const Vendas = () => {
-  const [modal, setModal] = useState();
+  const [modalVendas, setModalVendas] = useState(true);
+  const [modalInfo, setModalInfo] = useState(false);
 
   const data = useContext(DataContext);
   const vendas = data[1];
 
   function handleClick() {
-    setModal(true);
+    setModalVendas(true);
+  }
+
+  function handleClickInfo() {
+    setModalInfo(true);
   }
 
   return (
     <>
-      {modal && (
-        <Modal setModal={setModal} title={"Cadastro de Vendas"}>
-          <div className={styles.container}>
-            <div className={`${styles.box} ${"form"}`}>
-              <label>Nome do Cliente: </label>
-              <input type="text" />
-              <label>Código do Produto: </label>
-              <input type="number" />
-
-              <label>Quantidade: </label>
-              <input type="number" />
-
-              <div className={styles.botaoAdicionar}>Adicionar Produto</div>
-            </div>
-            <button className={styles.botao}>Cadastrar Pedido</button>
-            <div className={styles.pedido}>
-              <input disabled type="text" placeholder="Nome do Cliente" />
-              <ul>
-                <li>Pote de mel </li>
-                <span>1 un</span>
-                <span>R$ 35,00</span>
-                <li>Própolis </li>
-                <span>1 un</span>
-                <span>R$ 35,00</span>
-                <li>Própolis </li>
-                <span>1 un</span>
-                <span>R$ 35,00</span>
-              </ul>
-              <p>Total: R$ 250,00</p>
-            </div>
-          </div>
-        </Modal>
-      )}
+      {/* {modalVendas &&} */}
+      <ModalVendas setModal={setModalVendas} />
       <CardPrincipal>
         <div className="header">
           <p>Histórico de vendas</p>
@@ -66,19 +39,17 @@ const Vendas = () => {
             </ul>
 
             {vendas.vendas.map((venda, i) => (
-              <>
-                <ul key={venda.nome} className="barra">
+              <div key={i}>
+                <ul  className="barra">
                   <li>{venda.nome}</li>
                   <li>{venda.data}</li>
                   <li>R$ {venda.total.toFixed(2).replace(".", ",")}</li>
                   <li>
-                    <button>Mais informações</button>
+                    <button onClick={handleClickInfo}>Mais informações</button>
                   </li>
                 </ul>
-               
-                  <MaisInfo />
-              
-              </>
+                {modalInfo && <MaisInfo setModal={setModalInfo} />}
+              </div>
             ))}
           </div>
         </div>

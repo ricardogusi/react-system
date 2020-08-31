@@ -16,7 +16,7 @@ const Modal = ({ setModal, children, title }) => {
       <div className={`${styles.modal} ${styles.anime}`}>
         <div className={styles.header}>
           <p>{`${title}`}</p>
-          <button onClick={removeModal}>x</button>
+          <button onClick={removeModal}>X</button>
         </div>
         {children}
       </div>
