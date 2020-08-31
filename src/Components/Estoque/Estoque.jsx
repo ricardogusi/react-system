@@ -53,11 +53,11 @@ const Estoque = () => {
           </ul>
 
           {produtos.produtos.map((produto) =>(
-            <ul key={produto.codigo} className={styles.produto}>
-            <li>{produto.codigo}</li>
-            <li>{produto.nome}</li>
-            <li>{produto.quantidade}</li>
-            <li>R$ {produto.valor.toFixed(2).replace('.', ',')}</li>
+            <ul key={produto.id} className={styles.produto}>
+            <li>{produto.id}</li>
+            <li>{produto.name}</li>
+            <li>{produto.quantity}</li>
+            <li>R$ {produto.value.toFixed(2).replace('.', ',')}</li>
             <div>
             <Pencil className={styles.pencil} />
             <Trash className={styles.bin} />
