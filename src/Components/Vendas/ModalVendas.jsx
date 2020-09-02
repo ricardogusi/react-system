@@ -6,25 +6,14 @@ import { useContext } from "react";
 import DataContext from "../../Data/DataContext";
 
 const ModalVendas = ({ setModal }) => {
-  const [name, setName] = useState();
+  const [clientName, setClientName] = useState();
   const [codigoProduto, setCodigoProduto] = useState();
   const [quantidade, setQuantidade] = useState();
-  const [itemName, setItemName] = useState();
-  const [itemId, setItemId] = useState();
-  const [itemQuantity, setItemQuantity] = useState();
-  const [itemValue, setItemValue] = useState();
-
-  const [teste, setTeste] = useState({
-    name: "",
-    id:"",
-  })
-
-  useEffect(()=>{
-    setTeste({name:'teste'})
-    
-  },[])
+  const [itens, setItens] = useState({});
   
-  console.log(teste)
+  const [pedido, setPedido] = useState([])
+  
+  
 
   const data = useContext(DataContext);
   const produtos = data[0];
@@ -32,10 +21,12 @@ const ModalVendas = ({ setModal }) => {
   // console.log(produtos.produtos[0].name)
 
   function handleName({ target }) {
-    setName(target.value);
+    setClientName(target.value);
   }
 
+
    function handleProduto({ target }) {
+     
      setCodigoProduto(+target.value);
   }
 
@@ -43,20 +34,28 @@ const ModalVendas = ({ setModal }) => {
     setQuantidade(target.value);
   }
   
+  useEffect(()=>{  
+      setPedido(prev=> ([...prev, itens]))    
+  },[itens])
+  
+
   function handleAdicionar() {
     Array.from(produtos.produtos).forEach((produto) => {      
+      
       if(produto.id === codigoProduto) {
-        setItemName(produto.name)
-        setItemId(produto.id)
-        setItemQuantity(quantidade)
-        setItemValue(produto.value)     
-                       
+        setItens(prev =>({...prev, name:produto.name}))        
+        setItens(prev =>({...prev, id:produto.id}))
+        setItens(prev =>({...prev, quantity:quantidade}))
+        setItens(prev =>({...prev, value:produto.value}))                       
+        
       }
+      
     });
+    
     
   }
   
-  
+  console.log(pedido)
   
 
   return (
@@ -67,10 +66,10 @@ const ModalVendas = ({ setModal }) => {
             <label>Nome do Cliente: </label>
             <input type="text" onChange={handleName} />
             <label>Código do Produto: </label>
-            <input type="number" onChange={handleProduto} />
+            <input type="number" onChange={handleProduto} min='0' />
 
             <label>Quantidade: </label>
-            <input type="number" onChange={handleQuantidade} />
+            <input type="number" onChange={handleQuantidade} min='0' />
 
             <div className={styles.botaoAdicionar} onClick={handleAdicionar}>
               Adicionar Produto
@@ -78,23 +77,12 @@ const ModalVendas = ({ setModal }) => {
           </div>
           <button className={styles.botao}>Cadastrar Pedido</button>
           <div className={styles.pedido}>
-            <input
-              disabled
-              type="text"
-              placeholder="Nome do Cliente"
-              value={name}
-              readOnly
-            />
+          <span className={styles.clientName}>{clientName}</span>
+            
             <ul>
-              <li>{itemName}</li>
-              <span>{itemQuantity} un</span>
-              <span>{itemValue}</span>
-              {/* <li>Própolis </li>
-              <span>1 un</span>
-              <span>R$ 35,00</span>
-              <li>Própolis </li>
-              <span>1 un</span>
-              <span>R$ 35,00</span> */}
+              <li>{itens.name}</li>
+              {itens.name ? <span>{quantidade} {quantidade? <>un</> : ''}</span> : ''}
+              <span>{itens.value}</span>          
             </ul>
             <p>Total: R$ 250,00</p>
           </div>

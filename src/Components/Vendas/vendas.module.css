@@ -73,8 +73,20 @@
   margin-top: 10px;
   line-height: 25px;
   font-family: "Roboto", sans-serif;
+  width: 280px;
+}
+
+.pedido ul span {
+  width: 40px;
 }
 
 .pedido span {
   margin-left: 30px;
+}
+
+
+.clientName {
+  font-family: "Roboto", sans-serif;
+  margin-top: 3px;  
+
 }
