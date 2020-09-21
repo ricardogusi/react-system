@@ -6,7 +6,7 @@ import MaisInfo from "./ModalMaisInfo";
 import ModalVendas from "./ModalVendas";
 
 const Vendas = () => {
-  const [modalVendas, setModalVendas] = useState(true);
+  const [modalVendas, setModalVendas] = useState(false);
   const [modalInfo, setModalInfo] = useState(false);
 
   const data = useContext(DataContext);
@@ -22,8 +22,7 @@ const Vendas = () => {
 
   return (
     <>
-      {/* {modalVendas &&} */}
-      <ModalVendas setModal={setModalVendas} />
+      {modalVendas && <ModalVendas setModal={setModalVendas} />}
       <CardPrincipal>
         <div className="header">
           <p>Histórico de vendas</p>
@@ -41,7 +40,7 @@ const Vendas = () => {
             {vendas.vendas.map((venda, i) => (
               <div key={i}>
                 <ul  className="barra">
-                  <li>{venda.nome}</li>
+                  <li>{venda.name}</li>
                   <li>{venda.data}</li>
                   <li>R$ {venda.total.toFixed(2).replace(".", ",")}</li>
                   <li>

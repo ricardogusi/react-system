@@ -6,8 +6,8 @@ const Dashboard = () => {
   return (
     <CardPrincipal>
     <div className="">
-      <div className={styles.vendas}>333 Vendas</div>
-      <div className={styles.estoque}>2 itens com nível baixo</div>
+      <div className={styles.vendas}>número de vendas</div>
+      <div className={styles.estoque}>qtd itens abaixo estoque</div>
       <div className={styles.grafico}>gráfico com vendas por dia</div>
     </div>
     </CardPrincipal>

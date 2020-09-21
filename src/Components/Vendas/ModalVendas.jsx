@@ -16,6 +16,8 @@ const ModalVendas = ({ setModal }) => {
   const data = useContext(DataContext);
   const produtos = data[0];
 
+  const [teste, setTeste] = useState({})
+
   const now = new Date();
 
   const day = now.getDate();
@@ -24,20 +26,20 @@ const ModalVendas = ({ setModal }) => {
 
   const total = valor.reduce((a, b) => a + b, 0);
 
-  const subPedidoProdutos = subPedido.map((produto) => {
-    return produto;
-  });
+  // const subPedidoProdutos = subPedido.map((produto) => {
+  //   return console.log(produto);
+  // });
 
   function handleCadastrarPedido() {
     setPedido({
       name: `${clientName}`,
       data: `${day}/${month}/${year}`,
       total: `${total}`,
-      produtos: `${subPedidoProdutos}`,
+      produtos: `${itens}`,
     });
   }
 
-  console.log(pedido)
+  // console.log(itens)
   //   1:
   // id: 1
   // name: "Pote de Mel"
@@ -82,12 +84,16 @@ const ModalVendas = ({ setModal }) => {
   function handleAdicionar() {
     Array.from(produtos.produtos).forEach((produto) => {
       if (produto.id === codigoProduto) {
+        
         setItens((prev) => ({ ...prev, name: produto.name }));
         setItens((prev) => ({ ...prev, id: produto.id }));
         setItens((prev) => ({ ...prev, quantity: quantidade }));
         setItens((prev) => ({ ...prev, value: produto.value }));
+        
         const total = quantidade * produto.value;
         setValor((prev) => [...prev, total]);
+
+        console.log(itens)
       }
     });
   }
